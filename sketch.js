@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(640, 640);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
@@ -7,7 +7,7 @@ function draw() {
   stroke(255);
   rectMode(CENTER);
   noFill();
-  drawF(320, 320, 50, 6, 5);
+  drawF(windowWidth/2, windowHeight/2, 50, 6, 5);
 
 }
 
@@ -18,8 +18,8 @@ function drawF(x, y, r, seg, level) {
     rect(x, y, r, r);
     level--;
     for(var i=0; i<seg; i++){
-      var xc = x+ cos(i*TWO_PI/seg+mouseX/50) *r;
-      var yc = y+ sin(i*TWO_PI/seg+mouseY/50) *r;
+      var xc = x+ cos(i*TWO_PI/seg+mouseX/60) *r;
+      var yc = y+ sin(i*TWO_PI/seg+mouseY/60) *r;
       drawF(xc, yc, r, seg, level);
     }
   }
